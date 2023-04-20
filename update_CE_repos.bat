@@ -1,5 +1,34 @@
 @echo off
 
+:powerCreepArmory
+
+if exist ".\PowerCreepArmory\" (	
+	(cd ".\PowerCreepArmory\" && git pull && cd ..)		
+	goto ceArmory
+)
+
+echo.
+set answer=N
+set /P "answer=Do you want to install Sam's Power Creep Armory from github: [Y/N (Default N)]: "
+if /I "%answer%"=="Y" (
+	(git clone https://github.com/SamaelGray/PowerCreepArmory.git)
+)
+
+:ceArmory
+
+if exist ".\CombatExtendedArmory\" (	
+	(cd ".\CombatExtendedArmory\" && git pull && cd ..)		
+	goto ceArmor
+)
+
+echo.
+set answer=N
+set /P "answer=Do you want to install Combat Extended Armory from github: [Y/N (Default N)]: "
+if /I "%answer%"=="Y" (
+	(git clone https://github.com/CombatExtended-Continued/CombatExtendedArmory.git)
+)
+
+
 :ceArmor
 
 if exist ".\CombatExtendedArmors\" (	
